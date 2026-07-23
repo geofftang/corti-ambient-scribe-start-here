@@ -8,12 +8,12 @@ If you're about to hand Corti's ambient-scribe prompt to a coding agent anyway, 
 
 > Build an ambient scribe with the Corti SDK.
 >
-> 1. First, clone and run https://github.com/geofftang/corti-ambient-scribe-start-here to confirm your credentials and the core API work (one command, under a minute).
+> 1. Clone and run https://github.com/geofftang/corti-ambient-scribe-start-here yourself, no need to ask the developer, using the credentials below, to confirm the API works before anything else.
 > 2. Once that passes, read your build skill end-to-end: `corti-ambient-scribe/SKILL.md`, and build the full app.
 >
 > Credentials are in the Corti Console: console.corti.app → Developer Quickstart
 
-Paste that into Claude Code, Cursor, or Codex, and both steps run in the same session, automatically, no separate step for you to remember. The agent checks the API works on its own before it starts the bigger build.
+Paste that into Claude Code, Cursor, or Codex, and both steps run in the same session, automatically, no separate step for the developer to remember or perform. The agent checks the API works on its own before it starts the bigger build.
 
 ## Or run it yourself directly, no agent needed
 
@@ -47,20 +47,19 @@ When it finishes, it prints a choice:
 
 ## Why this exists
 
-Every new Corti signup lands on one page pointing several directions at once: a bold black "Start recording" button for the no-code AI Studio, a same-row plain-text "Developer quickstart" link for the SDK path at much lower visual weight, and a small link cluster at the very bottom of the page (API Reference, Postman, "AI coding tools") for raw docs. The separate 5-step onboarding tour adds a fourth pointer, closing by pushing back to AI Studio rather than toward any developer path. None of these is prioritized for what a specific developer is actually building, worth a broader look at the user journey on Corti's end. The repo below is another way I examined that same journey: once a developer does reach the ambient-scribe build path, the problem changes shape rather than disappearing. Corti hands them this prompt to paste into a coding agent:
+Every new Corti signup lands on one page pointing four different ways at once: a bold "Start recording" button for no-code AI Studio, a same-row plain-text "Developer quickstart" link for the SDK path, a small footer cluster (API Reference, Postman, "AI coding tools") for raw docs, and the onboarding tour's own closing step, which pushes back to AI Studio. None of it is prioritized for what a specific developer is building, worth its own look at the journey. The repo here examines a different part of that same journey: once a developer reaches the ambient-scribe build path, Corti hands them one prompt:
 
 > Build an ambient scribe with the Corti SDK.
->
-> 1. Read your build skill end-to-end: `corti-ambient-scribe/SKILL.md`
-> 2. Credentials are in the Corti Console: console.corti.app → Developer Quickstart
+> 1. Read your build skill end-to-end: SKILL.md.
+> 2. Credentials are in the Corti Console.
 
-The agent then asks a few configuration questions (framework, real-time vs. async, audio source) and, once the app is built, asks for credentials before running it. None of those questions confirm the one thing that actually matters first: whether the underlying API call works. That confirmation, if it happens at all, comes only after the whole app, real-time streaming, a three-pane UI, is already built. The build guide even has a documented path where it never happens: skip the credentials step, and the agent's own scripted hand-off says "I scaffolded `.env.example` but did not verify the demo end-to-end."
+The agent asks a few configuration questions and, once the app is built, asks for credentials, but nothing confirms the one thing that matters first: whether the API call actually works. That check, if it happens at all, comes only after a full three-pane app is built. One documented path skips it entirely: the agent's own scripted hand-off says "I scaffolded `.env.example` but did not verify the demo end-to-end."
 
-This repo moves that confirmation to the front: clone it, add your Corti credentials, run one command, and in under a minute you have a real transcribed note back from Corti's live API, proof the core thing works before any of that larger build starts. It runs on its own, no agent required, before you commit to either path below, and it's not throwaway: `index.js`'s working call chain (auth, upload, transcript, note, with the real gotchas already handled) is a legitimate reference to copy directly if you go the hands-on route. From there you decide which of Corti's two real paths to build on, their full example by hand, or their build guide through a coding agent.
+This repo moves that confirmation to the front by adding one line to that same prompt (see above): clone and run this repo first, no developer action needed. Both steps then run in the same agent session. Or run it yourself directly, no agent needed: clone it, add credentials, run one command, get a real transcribed note back in under a minute. Either way, `index.js`'s working call chain is a legitimate reference to copy if you go hands-on. From there, pick which of Corti's two real paths to build on.
 
 ## Where I'd take this next
 
-Two follow-ons worth naming. First, doable right now with no product change: use the augmented prompt above yourself, or share it with other developers. Second, if Corti wanted to adopt this natively, the right place is the prompt itself, not the `SKILL.md` file, since the prompt is short and pasted verbatim, guaranteed to be seen in full, where `SKILL.md` is long enough that an agent risks skimming or summarizing it (a risk the file's own instructions already flag). The same one-line addition would extend cleanly to all four use cases, not just ambient scribe. And this connects to acquisition: a developer arriving via ambient-scribe-specific ad messaging should land on this exact quickstart through the campaign's own UTM, rather than the generic homepage.
+Three follow-ons worth naming. First, doable right now with no product change: use the augmented prompt above yourself, or share it with other developers. Second, if Corti wanted to adopt this natively, the right place is the prompt itself, not the `SKILL.md` file, since the prompt is short and pasted verbatim, guaranteed to be seen in full, where `SKILL.md` is long enough that an agent risks skimming or summarizing it (a risk the file's own instructions already flag). The same one-line addition would extend cleanly to all four use cases, not just ambient scribe. Third: if a developer picks async mode in step 1's config questions, the agent could reuse this repo's working call chain directly as the backend instead of re-deriving it from the spec, real-time mode uses a different pattern (WebSocket streaming) so this only applies to async, worth naming, not worth building out both modes for right now. And this connects to acquisition: a developer arriving via ambient-scribe-specific ad messaging should land on this exact quickstart through the campaign's own UTM, rather than the generic homepage.
 
 ## Sample audio
 
