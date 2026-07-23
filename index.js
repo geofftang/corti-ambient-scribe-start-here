@@ -121,8 +121,13 @@ async function main() {
   }
   console.log(`   ok, interaction ${interactionId}`);
 
-  console.log("-> upload audio (fixtures/sample-audio.wav)");
-  const audio = readFileSync(join(__dirname, "fixtures", "sample-audio.wav"));
+  const audioPath = process.argv[2] ?? join(__dirname, "fixtures", "sample-audio.wav");
+  const usingOwnAudio = Boolean(process.argv[2]);
+  console.log(`-> upload audio (${usingOwnAudio ? audioPath : "fixtures/sample-audio.wav, the bundled sample"})`);
+  if (!existsSync(audioPath)) {
+    throw new Error(`Audio file not found: ${audioPath}`);
+  }
+  const audio = readFileSync(audioPath);
   const uploadRes = await fetch(`${API_BASE}/interactions/${interactionId}/recordings/`, {
     method: "POST",
     headers: { ...headers(access_token), "Content-Type": "application/octet-stream" },
@@ -180,6 +185,8 @@ async function main() {
   }
   const transcriptText = (transcript.transcripts ?? []).map((s) => s.text).join(" ");
   console.log(`   ok, ${transcriptText.length} characters transcribed`);
+  console.log("\n--- Transcript (input) ---\n");
+  console.log(transcriptText);
 
   console.log("-> generate note (corti-soap)");
   const documentRes = await fetch(`${API_BASE}/interactions/${interactionId}/documents/`, {
@@ -195,7 +202,7 @@ async function main() {
   const document = await documentRes.json();
 
   const elapsedSeconds = ((Date.now() - startedAt) / 1000).toFixed(1);
-  console.log(`\n--- Real Corti output, this run (${elapsedSeconds}s total) ---\n`);
+  console.log(`\n--- Generated note (output), ${elapsedSeconds}s total ---\n`);
   console.log(JSON.stringify(document, null, 2));
 
   console.log(

@@ -16,7 +16,15 @@ Then:
 npm start
 ```
 
-**What you get:** staged status lines (auth -> interaction -> upload -> transcript -> note) followed by a real generated SOAP note, from a real recorded clinical consultation bundled in `fixtures/sample-audio.wav`. Under a minute, no build, no agent required.
+**What you get:** staged status lines (auth -> interaction -> upload -> transcript -> note), the real transcript, and a real generated SOAP note, from a real recorded clinical consultation bundled in `fixtures/sample-audio.wav`. Under a minute, no build, no agent required.
+
+**Want to test with your own audio?**
+
+```bash
+npm start -- /path/to/your-audio.wav
+```
+
+Any WAV, MP3, or WebM works. Seeing it run on your own voice, not just the bundled sample, is the faster way to trust it.
 
 When it finishes, it prints a choice:
 
