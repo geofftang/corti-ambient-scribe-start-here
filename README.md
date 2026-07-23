@@ -47,7 +47,7 @@ When it finishes, it prints a choice:
 
 ## Why this exists
 
-Every new Corti signup lands on one page pointing four ways at once: a bold "Start recording" button for no-code AI Studio, a same-row plain-text "Developer quickstart" link for the SDK path, a small footer cluster (API Reference, Postman, "AI coding tools") for raw docs. A separate 5-step onboarding tour runs alongside it, credentials, support chat, billing credits, then AI Studio, generic content, same as the page around it, none of it tailored to what a specific developer is building. Once a developer does reach the ambient-scribe build path, Corti hands them one prompt:
+Every new Corti signup gets a 5-step onboarding tour first, credentials, support chat, billing credits, then AI Studio, generic content, not tailored to what a specific developer is building. Underneath it is the same story: a bold "Start recording" button for no-code AI Studio, a same-row plain-text "Developer quickstart" link for the SDK path, and a small footer cluster (API Reference, Postman, "AI coding tools") for raw docs. Once a developer does reach the ambient-scribe build path, Corti hands them one prompt:
 
 > Build an ambient scribe with the Corti SDK.
 > 1. Read your build skill end-to-end: SKILL.md.
