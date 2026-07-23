@@ -1,0 +1,13 @@
+{
+  "name": "corti-ambient-scribe-start-here",
+  "version": "1.0.0",
+  "description": "The fastest path from a Corti signup to your first real ambient-scribe API result.",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "license": "MIT"
+}
