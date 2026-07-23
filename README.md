@@ -26,14 +26,14 @@ When it finishes, it prints a choice:
 
 ## Why this exists
 
-Once you find the right on-ramp, here's the entire prompt Corti hands you to paste into a coding agent:
+Every new Corti signup gets the same generic experience regardless of what they're building: an onboarding tour that pitches the no-code AI Studio to everyone, a homepage whose one bold button is a generic recording demo, and a docs site with four equal "Get started" cards and no ambient-scribe card among them. That's not for lack of infrastructure. Corti already built separate build guides for dictation, ambient scribe, medical coding, and a clinical chat assistant, plus a use-case picker inside Developer Quickstart that hands you the matching one, it just doesn't show up first. Even once you find the ambient-scribe prompt below, it doesn't get you a result, it gets you a build task:
 
 > Build an ambient scribe with the Corti SDK.
 >
 > 1. Read your build skill end-to-end: `corti-ambient-scribe/SKILL.md`
 > 2. Credentials are in the Corti Console: console.corti.app → Developer Quickstart
 
-Corti already built the right scaffolding: separate build guides for dictation, ambient scribe, medical coding, and a clinical chat assistant, plus a use-case picker inside Developer Quickstart that hands you the matching one. None of that shows up first. Every new signup gets the same generic experience regardless of what they're building, an onboarding tour that pitches the no-code AI Studio to everyone, and a homepage whose one bold button is a generic recording demo. The docs site repeats the same shape: four equal "Get started" cards, no ambient-scribe card among them. And pasting that prompt above takes ten seconds, so it isn't the commitment; what it triggers is: your agent reads a full spec and builds an entire app, real-time streaming, a three-pane UI, before you know whether the underlying API even works for you. This repo is the smaller step in front of that: clone it, add your Corti credentials, run one command, and you get back a real transcribed note from an actual consultation in under a minute, on your own setup, before you commit an agent to anything. From there you pick which of Corti's two real paths to build on, their full example by hand, or their build guide through a coding agent.
+Paste that into your agent, and it goes off to build a whole app (real-time streaming, a three-pane UI) from a full spec, with nothing to show you until it's done. This repo skips the build task. It's already built: clone it, add your Corti credentials, run one command, and in under a minute you have a real transcribed note back from Corti's live API, proof the thing works before you or an agent invest any time building around it. From there you decide which of Corti's two real paths to build on, their full example by hand, or their build guide through a coding agent.
 
 ## Where I'd take this next
 
