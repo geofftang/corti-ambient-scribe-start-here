@@ -47,15 +47,15 @@ When it finishes, it prints a choice:
 
 ## Why this exists
 
-Every new Corti signup lands on one page pointing four different ways at once: a bold "Start recording" button for no-code AI Studio, a same-row plain-text "Developer quickstart" link for the SDK path, a small footer cluster (API Reference, Postman, "AI coding tools") for raw docs, and the onboarding tour's own closing step, which pushes back to AI Studio. None of it is prioritized for what a specific developer is building, worth its own look at the journey. The repo here examines a different part of that same journey: once a developer reaches the ambient-scribe build path, Corti hands them one prompt:
+Every new Corti signup lands on one page pointing four ways at once: a bold "Start recording" button for no-code AI Studio, a same-row plain-text "Developer quickstart" link for the SDK path, a small footer cluster (API Reference, Postman, "AI coding tools") for raw docs, and the onboarding tour's own closing step, which pushes back to AI Studio. None of it is prioritized for what a specific developer is building. Once a developer does reach the ambient-scribe build path, Corti hands them one prompt:
 
 > Build an ambient scribe with the Corti SDK.
 > 1. Read your build skill end-to-end: SKILL.md.
 > 2. Credentials are in the Corti Console.
 
-The agent asks a few configuration questions and, once the app is built, asks for credentials, but nothing confirms the one thing that matters first: whether the API call actually works. That check, if it happens at all, comes only after a full three-pane app is built. One documented path skips it entirely: the agent's own scripted hand-off says "I scaffolded `.env.example` but did not verify the demo end-to-end."
+The agent asks a few setup questions and, once the app is built, asks for credentials, but nothing confirms the API actually works until after a full three-pane app is built, and one documented path skips that check entirely: the agent's own scripted hand-off says "I scaffolded `.env.example` but did not verify the demo end-to-end."
 
-This repo is that fast demo, for the API itself. AI Studio already gives you a fast no-code demo of Corti's capability, transcription, document generation, and so on, in their own UI. Nothing gives you an equally fast demo of the actual integration, the real calls you'd write in your own code, until this: clone it, add your Corti credentials, run one command, and in under a minute you have a real transcribed note back from Corti's live API. Fold it into the same prompt you'd hand a coding agent (see above, one line added), and both steps run in the same agent session, no separate step to remember. Or run it yourself directly, no agent needed. Either way, `index.js`'s working call chain is a legitimate reference to copy if you go hands-on. From there, pick which of Corti's two real paths to build on.
+This repo is the fast demo AI Studio doesn't cover: AI Studio demos the capability, no-code, in Corti's own UI; this demos the integration itself, the real calls you'd write, in under a minute. The fix is the one-line addition at the top of this file: fold it into that same prompt, or run it yourself directly (see Quickstart above). Either way, you're left with two real paths to build on: Corti's full example by hand, or `SKILL.md` through a coding agent, and `index.js` itself is a working reference for either one, not something you throw away after the check.
 
 ## Where I'd take this next
 
