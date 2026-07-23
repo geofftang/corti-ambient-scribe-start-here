@@ -26,7 +26,7 @@ When it finishes, it prints a choice:
 
 ## Why this exists
 
-Every new Corti signup gets the same generic experience regardless of what they're building. Developer Quickstart sits right on the homepage, it's just not what the tour or the one bold button point toward, so a developer looking to build often lands in the no-code demo first. That's a real gap, worth its own fix, and a different one from what this asset targets. Once a developer does reach the ambient-scribe build path, the problem changes shape rather than disappearing. Corti hands them this prompt to paste into a coding agent:
+Every new Corti signup lands on one page pointing several directions at once: a bold black "Start recording" button for the no-code AI Studio, a same-row plain-text "Developer quickstart" link for the SDK path at much lower visual weight, and a small link cluster at the very bottom of the page (API Reference, Postman, "AI coding tools") for raw docs. The separate 5-step onboarding tour adds a fourth pointer, closing by pushing back to AI Studio rather than toward any developer path. None of these is prioritized for what a specific developer is actually building. That's a real gap, worth its own fix, and a different one from what this asset targets. Once a developer does reach the ambient-scribe build path, the problem changes shape rather than disappearing. Corti hands them this prompt to paste into a coding agent:
 
 > Build an ambient scribe with the Corti SDK.
 >
