@@ -33,7 +33,7 @@ Every new Corti signup gets the same generic experience regardless of what they'
 > 1. Read your build skill end-to-end: `corti-ambient-scribe/SKILL.md`
 > 2. Credentials are in the Corti Console: console.corti.app → Developer Quickstart
 
-Paste that into your agent, and it goes off to build a whole app (real-time streaming, a three-pane UI) from a full spec, with nothing to show you until it's done. This repo skips the build task. It's already built: clone it, add your Corti credentials, run one command, and in under a minute you have a real transcribed note back from Corti's live API, proof the thing works before you or an agent invest any time building around it. From there you decide which of Corti's two real paths to build on, their full example by hand, or their build guide through a coding agent.
+Paste that into your agent, and it goes off to build a whole app (real-time streaming, a three-pane UI) from a full spec, with nothing to show you until it's done. The build guide even has a documented path where verification never happens at all: skip the credentials step and the agent's own scripted hand-off says "I scaffolded `.env.example` but did not verify the demo end-to-end." This repo skips the build task. It's already built: clone it, add your Corti credentials, run one command, and in under a minute you have a real transcribed note back from Corti's live API, proof the thing works before you or an agent invest any time building around it. From there you decide which of Corti's two real paths to build on, their full example by hand, or their build guide through a coding agent.
 
 ## Where I'd take this next
 
