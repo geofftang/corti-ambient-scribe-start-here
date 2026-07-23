@@ -2,7 +2,20 @@
 
 The fastest path from a Corti signup to your first real ambient-scribe API result. Clone it, run one command, see a real transcribed note come back.
 
-## Quickstart
+## Fastest way to use this: fold it into the same agent prompt you were already going to use
+
+If you're about to hand Corti's ambient-scribe prompt to a coding agent anyway, use this instead, the same prompt with one line added:
+
+> Build an ambient scribe with the Corti SDK.
+>
+> 1. First, clone and run https://github.com/geofftang/corti-ambient-scribe-start-here to confirm your credentials and the core API work (one command, under a minute).
+> 2. Once that passes, read your build skill end-to-end: `corti-ambient-scribe/SKILL.md`, and build the full app.
+>
+> Credentials are in the Corti Console: console.corti.app → Developer Quickstart
+
+Paste that into Claude Code, Cursor, or Codex, and both steps run in the same session, automatically, no separate step for you to remember. The agent checks the API works on its own before it starts the bigger build.
+
+## Or run it yourself directly, no agent needed
 
 **Prerequisites:** a free Corti account.
 
@@ -47,7 +60,7 @@ This repo moves that confirmation to the front: clone it, add your Corti credent
 
 ## Where I'd take this next
 
-Two follow-ons worth naming. Corti could fold this same "did it actually work" check directly into the SKILL.md-guided build for all four use cases, not only ambient scribe, so the checkpoint lives in their own product rather than an external repo. And this connects to acquisition: a developer arriving via ambient-scribe-specific ad messaging should land on this exact quickstart through the campaign's own UTM, rather than the generic homepage.
+Two follow-ons worth naming. First, doable right now with no product change: use the augmented prompt above yourself, or share it with other developers. Second, if Corti wanted to adopt this natively, the right place is the prompt itself, not the `SKILL.md` file, since the prompt is short and pasted verbatim, guaranteed to be seen in full, where `SKILL.md` is long enough that an agent risks skimming or summarizing it (a risk the file's own instructions already flag). The same one-line addition would extend cleanly to all four use cases, not just ambient scribe. And this connects to acquisition: a developer arriving via ambient-scribe-specific ad messaging should land on this exact quickstart through the campaign's own UTM, rather than the generic homepage.
 
 ## Sample audio
 
