@@ -26,18 +26,16 @@ When it finishes, it prints a choice:
 
 ## Why this exists
 
-Once a developer reaches the ambient-scribe build path, here's the entire interaction Corti gives them before committing to a real build:
+Every new Corti signup gets the same generic experience regardless of what they're building, no signposted path per use case, so getting to the ambient-scribe build path at all takes some hunting. That's a real gap, worth its own fix, and a different one from what this asset targets. Once a developer does find that path, the problem changes shape rather than disappearing: here's the entire interaction Corti gives them before committing to a real build:
 
 > Build an ambient scribe with the Corti SDK.
 >
 > 1. Read your build skill end-to-end: `corti-ambient-scribe/SKILL.md`
 > 2. Credentials are in the Corti Console: console.corti.app → Developer Quickstart
 
-That's it. Paste that into a coding agent, and it goes off to build a whole app (real-time streaming, a three-pane UI) from a full spec, with nothing to click, run, or check until it's done. The build guide even has a documented path where that check never happens at all: skip the credentials step, and the agent's own scripted hand-off says "I scaffolded `.env.example` but did not verify the demo end-to-end." A developer has no tangible way to confirm the thing actually works for them, just a wait.
+That's it. Paste that into a coding agent, and it goes off to build a whole app (real-time streaming, a three-pane UI) from a full spec, with nothing to click, run, or check until it's done. The build guide even has a documented path where that check never happens at all: skip the credentials step, and the agent's own scripted hand-off says "I scaffolded `.env.example` but did not verify the demo end-to-end." A developer who made it past the first gap has nothing tangible to hold onto through the second one, just a wait.
 
-This repo is that missing checkpoint: clone it, add your Corti credentials, run one command, and in under a minute you have a real transcribed note back from Corti's live API, something to click and see work, not a black box. From there you decide which of Corti's two real paths to build on, their full example by hand, or their build guide through a coding agent.
-
-*(Side note, a different part of the journey than this asset targets: getting to this build path at all is its own problem. Every new signup gets the same generic experience regardless of what they're building, no signposted path per use case, so a more personalized flow per JTBD is worth its own fix, just not this one.)*
+This repo picks up exactly there: clone it, add your Corti credentials, run one command, and in under a minute you have a real transcribed note back from Corti's live API, something to click and see work, not a black box. From there you decide which of Corti's two real paths to build on, their full example by hand, or their build guide through a coding agent.
 
 ## Where I'd take this next
 
