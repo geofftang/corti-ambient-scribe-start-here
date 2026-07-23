@@ -26,16 +26,16 @@ When it finishes, it prints a choice:
 
 ## Why this exists
 
-Every new Corti signup gets the same generic experience regardless of what they're building, no signposted path per use case, so getting to the ambient-scribe build path at all takes some hunting. That's a real gap, worth its own fix, and a different one from what this asset targets. Once a developer does find that path, the problem changes shape rather than disappearing: here's the entire interaction Corti gives them before committing to a real build:
+Every new Corti signup gets the same generic experience regardless of what they're building. Developer Quickstart sits right on the homepage, it's just not what the tour or the one bold button point toward, so a developer looking to build often lands in the no-code demo first. That's a real gap, worth its own fix, and a different one from what this asset targets. Once a developer does reach the ambient-scribe build path, the problem changes shape rather than disappearing. Corti hands them this prompt to paste into a coding agent:
 
 > Build an ambient scribe with the Corti SDK.
 >
 > 1. Read your build skill end-to-end: `corti-ambient-scribe/SKILL.md`
 > 2. Credentials are in the Corti Console: console.corti.app → Developer Quickstart
 
-That's it. Paste that into a coding agent, and it goes off to build a whole app (real-time streaming, a three-pane UI) from a full spec, with nothing to click, run, or check until it's done. The build guide even has a documented path where that check never happens at all: skip the credentials step, and the agent's own scripted hand-off says "I scaffolded `.env.example` but did not verify the demo end-to-end." A developer who made it past the first gap has nothing tangible to hold onto through the second one, just a wait.
+The agent then asks a few configuration questions (framework, real-time vs. async, audio source) and, once the app is built, asks for credentials before running it. None of those questions confirm the one thing that actually matters first: whether the underlying API call works. That confirmation, if it happens at all, comes only after the whole app, real-time streaming, a three-pane UI, is already built. The build guide even has a documented path where it never happens: skip the credentials step, and the agent's own scripted hand-off says "I scaffolded `.env.example` but did not verify the demo end-to-end."
 
-This repo picks up exactly there: clone it, add your Corti credentials, run one command, and in under a minute you have a real transcribed note back from Corti's live API, something to click and see work, not a black box. From there you decide which of Corti's two real paths to build on, their full example by hand, or their build guide through a coding agent.
+This repo moves that confirmation to the front: clone it, add your Corti credentials, run one command, and in under a minute you have a real transcribed note back from Corti's live API, proof the core thing works before any of that larger build starts. From there you decide which of Corti's two real paths to build on, their full example by hand, or their build guide through a coding agent.
 
 ## Where I'd take this next
 
